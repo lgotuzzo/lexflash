@@ -1,8 +1,4 @@
-# lexflash
-Una app para aprender vocabulario usando tarjetas y reflejos mentales
-
-
-# 🧠 LexiFlash
+# 🧠 LexFlash
 
 Una aplicación interactiva hecha en Python para aprender vocabulario mediante tarjetas de memoria (*flashcards*), con puntaje, límite de errores, y control de tiempo.
 
