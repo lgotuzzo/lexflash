@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import tkinter as tk
 from tkinter import simpledialog, messagebox, filedialog
 import csv
@@ -8,7 +9,7 @@ from datetime import datetime
 class FlashcardApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Flashcards App")
+        self.root.title("LexFlash")
         self.root.configure(bg="black")
 
         self.user_name = simpledialog.askstring("Nombre", "Ingresa tu nombre:")
@@ -19,6 +20,11 @@ class FlashcardApp:
         self.create_scores_table()
 
         file_path = self.choose_file()
+        if not file_path:
+            messagebox.showwarning("Cancelado", "No se seleccionó ningún archivo.")
+            self.root.destroy()
+            return
+
         self.show_csv_format_info()
         self.flashcards = self.load_flashcards(file_path)
 
@@ -188,4 +194,3 @@ if __name__ == "__main__":
     app = FlashcardApp(root)
     root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
-
